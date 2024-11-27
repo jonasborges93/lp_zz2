@@ -198,112 +198,6 @@ a {
   }
 }
 
-/*HISTORY SECTION*/
-.sectionHistory__item {
-  background-color: var(--zinc-900);
-}
-
-.sectionHistory__wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  min-height: 700px;
-}
-
-@media (max-width: 768px) {
-  .sectionHistory__wrapper {
-    grid-template-columns: repeat(1, 1fr);
-    min-height: initial;
-  }
-}
-
-.sectionHistory__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.sectionHistory__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1rem 2.5rem;
-}
-
-@media (max-width: 1080px) {
-  .sectionHistory__content {
-    padding: 2.5rem 1rem;
-  }
-}
-
-.sectionHistory__title,
-.sectionHistory__text {
-  color: var(--zinc-50);
-}
-
-.sectionHistory__title {
-  font-size: 2rem;
-  line-height: 2.5rem;
-  margin-bottom: 1.5rem;
-  max-width: 480px;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .sectionHistory__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-
-.sectionHistory__text {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 768px) {
-  .sectionHistory__text {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-}
-
-/*HISTORY REVERSE SECTION*/
-.sectionHistory__item--reverse {
-  background-color: var(--yellow-500);
-}
-
-.sectionHistory__item--reverse .sectionHistory__image {
-  order: 2;
-}
-
-@media (max-width: 768px) {
-  .sectionHistory__item--reverse .sectionHistory__image {
-    order: initial;
-  }
-}
-
-.sectionHistory__item--reverse .sectionHistory__content {
-  margin: 0 auto;
-}
-
-.sectionHistory__item--reverse .sectionHistory__title,
-.sectionHistory__item--reverse .sectionHistory__text {
-  color: var(--zinc-900);
-}
-
-.sectionHistory__item--reverse .sectionHistory__button {
-  background-color: var(--zinc-900);
-  color: var(--zinc-200);
-}
-
-.sectionHistory__item--reverse .sectionHistory__button:hover {
-  background-color: var(--zinc-600);
-}
-
 /*BENEFITS SECTION*/
 .sectionBenefits {
   padding-bottom: 7.5rem;
@@ -428,4 +322,232 @@ a {
   color: var(--zinc-800);
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+/* SECTION SOLUTION */
+.sectionSolution {
+  padding: 7.5rem 0;
+  background-color: var(--zinc-200);
+}
+
+@media (max-width: 1080px) {
+  .sectionSolution {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionSolution {
+    padding: 3.5rem 0;
+  }
+}
+.sectionSolution__wrapper {
+  display: grid;
+  grid-template-columns: 1.25fr 2fr;
+  gap: 1.5rem;
+
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sectionSolution__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.sectionSolution__left {
+}
+
+.sectionSolution__title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--zinc-800);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .sectionSolution__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.sectionSolution__text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--zinc-600);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sectionSolution__text {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionSolution__button {
+    display: none;
+  }
+}
+
+.sectionSolution__button-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sectionSolution__button-mobile {
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
+
+.sectionSolution__right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .sectionSolution__right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .sectionSolution__right {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* CARD-ITEM */
+.card-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+}
+
+.card-item__image {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.card-item__title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.card-item__title,
+.card-item__text {
+  text-align: center;
+}
+
+/*HISTORY SECTION*/
+.sectionHistory__item {
+  background-color: var(--zinc-900);
+}
+
+.sectionHistory__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  min-height: 700px;
+}
+
+@media (max-width: 768px) {
+  .sectionHistory__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    min-height: initial;
+  }
+}
+
+.sectionHistory__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sectionHistory__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 2.5rem;
+}
+
+@media (max-width: 1080px) {
+  .sectionHistory__content {
+    padding: 2.5rem 1rem;
+  }
+}
+
+.sectionHistory__title,
+.sectionHistory__text {
+  color: var(--zinc-50);
+}
+
+.sectionHistory__title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .sectionHistory__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.sectionHistory__text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .sectionHistory__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+/*HISTORY REVERSE SECTION*/
+.sectionHistory__item--reverse {
+  background-color: var(--yellow-500);
+}
+
+.sectionHistory__item--reverse .sectionHistory__image {
+  order: 2;
+}
+
+@media (max-width: 768px) {
+  .sectionHistory__item--reverse .sectionHistory__image {
+    order: initial;
+  }
+}
+
+.sectionHistory__item--reverse .sectionHistory__content {
+  margin: 0 auto;
+}
+
+.sectionHistory__item--reverse .sectionHistory__title,
+.sectionHistory__item--reverse .sectionHistory__text {
+  color: var(--zinc-900);
+}
+
+.sectionHistory__item--reverse .sectionHistory__button {
+  background-color: var(--zinc-900);
+  color: var(--zinc-200);
+}
+
+.sectionHistory__item--reverse .sectionHistory__button:hover {
+  background-color: var(--zinc-600);
 }
