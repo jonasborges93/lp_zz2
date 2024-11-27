@@ -306,19 +306,19 @@ a {
 
 /*BENEFITS SECTION*/
 .sectionBenefits {
-  padding: 7.5rem 0;
+  padding-bottom: 7.5rem;
   background-color: var(--zinc-50);
 }
 
 @media (max-width: 1080px) {
   .sectionBenefits {
-    padding: 5rem 0;
+    padding-bottom: 5rem;
   }
 }
 
 @media (max-width: 768px) {
   .sectionBenefits {
-    padding: 3.5rem 0;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -339,6 +339,9 @@ a {
 }
 
 .sectionBenefits__wrapper {
+  margin-top: -5rem;
+  z-index: 1;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -354,6 +357,17 @@ a {
   .sectionBenefits__wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.sectionBenefits__button {
+  margin: 2.5rem auto 0;
+  display: block;
+  background-color: var(--zinc-900);
+  color: var(--zinc-200);
+}
+
+.sectionBenefits__button:hover {
+  background-color: var(--zinc-600);
 }
 
 .itemBenefits {
@@ -414,15 +428,4 @@ a {
   color: var(--zinc-800);
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.sectionBenefits__button {
-  margin: 2.5rem auto 0;
-  display: block;
-  background-color: var(--zinc-900);
-  color: var(--zinc-200);
-}
-
-.sectionBenefits__button:hover {
-  background-color: var(--zinc-600);
 }
