@@ -5,16 +5,49 @@ const formEmail = document.getElementById("formEmail");
 const formPhone = document.getElementById("formPhone");
 const formMessage = document.getElementById("formMessage");
 
+//APLICANDO MASCARA NO CAMPO TELEFONE
+formPhone.addEventListener("input", () => {
+  // Remove caracteres não numéricos
+  let inputValue = formPhone.value.replace(/\D/g, "");
+
+  // Limita o número máximo de caracteres ao tamanho de um telefone completo
+  if (inputValue.length > 11) {
+    inputValue = inputValue.slice(0, 11);
+  }
+
+  // Aplica a máscara dependendo do tamanho do input
+  if (inputValue.length > 10) {
+    // Formato celular com 9 dígitos
+    inputValue = inputValue.replace(
+      /^(\d{2})(\d{1})(\d{4})(\d{4}).*/,
+      "($1) $2 $3-$4"
+    );
+  } else {
+    // Formato fixo com 8 dígitos
+    inputValue = inputValue.replace(/^(\d{2})(\d{4})(\d{4}).*/, "($1) $2-$3");
+  }
+
+  formPhone.value = inputValue;
+});
+
 // FUNÇÃO PARA CHECAGEM DOS CAMPOS
 function checkForm() {
   console.log("Função Checagem dos campos");
 
   let isValid = true;
 
-  if (!checkInputName()) isValid = false;
-  if (!checkInputEmail()) isValid = false;
-  if (!checkInputPhone()) isValid = false;
-  if (!checkInputMessage()) isValid = false;
+  if (!checkInputName()) {
+    isValid = false;
+  }
+  if (!checkInputEmail()) {
+    isValid = false;
+  }
+  if (!checkInputPhone()) {
+    isValid = false;
+  }
+  if (!checkInputMessage()) {
+    isValid = false;
+  }
 
   return isValid;
 }
