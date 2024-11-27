@@ -14,6 +14,8 @@
   --zinc-900: #18181b;
   --zinc-950: #09090b;
 
+  --red-700: #b91c1c;
+
   /*Fonts*/
   --font: "Montserrat", sans-serif;
   --size-default: 16px;
@@ -23,7 +25,7 @@
 
 :focus {
   outline: transparent;
-  box-shadow: 0 0 0 2px var(--zinc-950);
+  box-shadow: 0 0 0 2px var(--zinc-600);
 }
 
 ::-webkit-scrollbar {
@@ -98,6 +100,7 @@ a {
   transition: 0.3s ease;
 
   display: inline-block;
+  border: none;
 }
 
 @media (max-width: 768px) {
@@ -703,4 +706,118 @@ a {
 
 .card-testimonials__name {
   font-weight: bold;
+}
+
+/* SECTION CONTACT */
+.sectionContact {
+  padding: 7.5rem 0;
+  background-color: var(--zinc-50);
+}
+
+@media (max-width: 1080px) {
+  .sectionContact {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionContact {
+    padding: 3.5rem 0;
+  }
+}
+
+.sectionContact__title,
+.sectionContact__text {
+  text-align: center;
+}
+
+.sectionContact__title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--zinc-800);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .sectionContact__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.sectionContact__text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--zinc-600);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sectionContact__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.form__content {
+  padding: 2.5rem 2rem;
+  border-radius: 0.8rem;
+  background-color: var(--zinc-200);
+
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.form__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  color: var(--zinc-600);
+  margin-bottom: 1.5rem;
+}
+.form__group {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.form__error {
+  position: absolute;
+  bottom: -1.3rem;
+  left: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  color: var(--red-700);
+  visibility: hidden;
+}
+/* QUANDO O INPUT ESTIVER COM ERRO */
+.form__group.error .form__input,
+.form__group.error .form__textarea {
+  box-shadow: 0 0 0 2px var(--red-700);
+}
+
+.form__group.error .form__error {
+  visibility: visible;
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  border: 1px solid var(--zinc-400);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.form__textarea {
+  resize: none;
+  height: 10rem;
+}
+
+.form__button {
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
