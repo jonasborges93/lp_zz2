@@ -1,3 +1,38 @@
+<?php 
+
+  if(isset($_POST['submit'])){
+
+    //INCLUINDO ARQUIVO DE CONFIGURACAO DO DATABASE
+    include_once('config.php');
+
+    //// Define o fuso horário para São Paulo
+    date_default_timezone_set('America/Sao_Paulo');
+
+    //RECUPERANDO INFORMAÇÕES DO FORMULÁRIO
+    $formName = $_POST['formName'];
+    $formEmail =$_POST['formEmail'];
+    $formPhone =$_POST['formPhone'];
+    $formMessage =$_POST['formMessage'];
+    $sentDate = date('Y-m-d H:i:s');
+
+    //INSERINDO OS DADOS NO DATABASE PREVININDO SQL INJECTION
+    $result = $conexao->prepare("INSERT INTO formulario_contato(name,email,phone,message,sentDate) VALUES (?,?,?,?,?)");
+    $result->bind_param("sssss",$formName,$formEmail,$formPhone,$formMessage,$sentDate);
+
+    // VERIFICANDO SE DEU CERTO A INSERÇÃO NO BANCO
+    if($result->execute()){
+      echo "<script>alert('Mensagem enviada com sucesso!');</script>";
+    } else {
+      echo "<script>alert('Erro no envio da mensagem: '"  . $result->error . ")</script>";
+    }
+
+    // FECHANDO AS CONEXÕES COM O DATABASE
+    $result->close();
+    $conexao->close();
+
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -388,7 +423,7 @@
           pessoal. Nossa equipe especializada está à disposição para oferecer
           suporte e esclarecer todas as dúvidas.
         </p>
-        <form action="" class="form" id="form">
+        <form action="index.php" method="POST" class="form" id="form">
           <div class="form__content">
             <h4 class="form__title">Envie sua mensagem</h4>
             <div class="form__group">
@@ -397,6 +432,7 @@
                 class="form__input"
                 placeholder="Como gostaria de ser chamado(a)?"
                 id="formName"
+                name="formName"
               />
               <span class="form__error">Aqui vai a mensagem de erro...</span>
             </div>
@@ -406,6 +442,7 @@
                 class="form__input"
                 placeholder="Digite o seu melhor e-mail..."
                 id="formEmail"
+                name="formEmail"
               />
               <span class="form__error">Aqui vai a mensagem de erro...</span>
             </div>
@@ -415,6 +452,7 @@
                 class="form__input"
                 placeholder="Informe seu número para contato..."
                 id="formPhone"
+                name="formPhone"
               />
               <span class="form__error">Aqui vai a mensagem de erro...</span>
             </div>
@@ -423,10 +461,11 @@
                 id="formMessage"
                 class="form__textarea"
                 placeholder="Digite sua mensagem..."
+                name="formMessage"
               ></textarea>
               <span class="form__error">Aqui vai a mensagem de erro...</span>
             </div>
-            <button class="form__button button" type="subtmit">
+            <button class="form__button button" type="subtmit" name="submit">
               Enviar sua mensagem
             </button>
           </div>
