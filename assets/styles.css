@@ -49,6 +49,7 @@
 
 html {
   font-size: var(--size-default);
+  scroll-behavior: smooth;
 }
 @media (max-width: 1080px) {
   html {

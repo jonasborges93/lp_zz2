@@ -131,7 +131,7 @@ if (isset($_POST['submit'])) {
             produtos projetados para oferecer conectividade, segurança e
             comodidade no dia a dia.
           </p>
-          <a href="#contatct" class="sectionSolution__button button">Encontre a solução para você</a>
+          <a href="#contact" class="sectionSolution__button button">Encontre a solução para você</a>
         </div>
         <div class="sectionSolution__right">
           <div class="card-item">
@@ -199,7 +199,7 @@ if (isset($_POST['submit'])) {
             </p>
           </div>
         </div>
-        <a href="#contatct" class="sectionSolution__button-mobile button">Encontre a solução para você</a>
+        <a href="#contact" class="sectionSolution__button-mobile button">Encontre a solução para você</a>
       </div>
     </div>
   </section>
@@ -380,7 +380,7 @@ if (isset($_POST['submit'])) {
     </div>
   </section>
 
-  <section class="sectionContact">
+  <section class="sectionContact" id="contact">
     <div class="container">
       <h2 class="sectionContact__title">
         Estamos prontos para transformar sua experiência automotiva!
