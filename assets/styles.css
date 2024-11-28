@@ -758,7 +758,7 @@ a {
 
 .form__content {
   padding: 2.5rem 2rem;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   background-color: var(--zinc-200);
 
   -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
@@ -792,7 +792,8 @@ a {
 }
 /* QUANDO O INPUT ESTIVER COM ERRO */
 .form__group.error .form__input,
-.form__group.error .form__textarea {
+.form__group.error .form__textarea,
+.form__group.error .formSecret__input {
   box-shadow: 0 0 0 2px var(--red-700);
 }
 
@@ -801,7 +802,8 @@ a {
 }
 
 .form__input,
-.form__textarea {
+.form__textarea,
+.formSecret__input {
   width: 100%;
   border: 1px solid var(--zinc-400);
   padding: 1rem 1.5rem;
@@ -813,6 +815,7 @@ a {
   height: 10rem;
 }
 
+.formSecret__button,
 .form__button {
   cursor: pointer;
   margin: 0 auto;
@@ -882,4 +885,189 @@ a {
 
 .footer__creator-link:hover {
   color: var(--yellow-500);
+}
+
+/* =======ADMINISTRAÇÃO======== */
+.sectionResultNF,
+.sectionResult,
+.sectionSecret {
+  background-color: var(--zinc-200);
+}
+
+.sectionResultNF__content,
+.sectionSecret__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NOT FOUND DATABASE */
+.sectionResultNF__title {
+  font-size: 6rem;
+  line-height: 6.5rem;
+  color: var(--zinc-400);
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sectionResultNF__title {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+}
+.sectionResultNF__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 0.2rem;
+  background-color: var(--yellow-500);
+}
+
+.sectionResultNF__text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  color: var(--zinc-600);
+  margin-bottom: 2rem;
+}
+
+/* RESULT DATABASE */
+.sectionResult {
+  min-height: 100vh;
+  padding: 7.5rem 0;
+}
+
+@media (max-width: 1080px) {
+  .sectionResult {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 1080px) {
+  .sectionResult {
+    padding: 3.5rem 0;
+  }
+}
+
+.sectionResult__top {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sectionResult__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 0.2rem;
+  background-color: var(--yellow-500);
+  margin-bottom: 2rem;
+}
+
+.sectionResult__title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--zinc-600);
+  margin-bottom: 0.5rem;
+}
+
+.sectionResult__text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--zinc-600);
+}
+
+.sectionResult__list {
+  list-style: none;
+}
+
+.sectionResult__item {
+  padding: 1.5rem 2.5rem;
+  border-radius: 1rem;
+  background-color: var(--zinc-100);
+
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 768px) {
+  .sectionResult__item {
+    padding: 1.5rem;
+  }
+}
+
+.sectionResult__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.sectionResult__group {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sectionResult__group {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.sectionResult__group:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.sectionResult__label,
+.sectionResult__text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--zinc-600);
+}
+
+.sectionResult__label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* NO-ACCESS */
+.formSecret {
+  padding: 2.5rem 2rem;
+  border-radius: 0.8rem;
+  background-color: var(--zinc-200);
+
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.04);
+
+  max-width: 25rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.formSecret__info {
+  margin-bottom: 1rem;
+}
+
+.formSecret__title,
+.formSecret__text {
+  text-align: center;
+  color: var(--zinc-600);
+}
+
+.formSecret__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+.formSecret__text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.formSecret__button {
+  width: 100%;
 }
